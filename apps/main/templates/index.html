@@ -1,0 +1,47 @@
+{% extends 'base/base.html' %}
+{% load staticfiles %}
+{% block title %}
+    首页
+{% endblock %}
+{% block page_css %}
+    <link rel="stylesheet" href="{% static 'css/swiper.css' %}">
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
+{% endblock %}
+{% block page_jq %}
+    <script src="{% static 'js/swiper.js' %}"></script>
+    <script type="text/javascript">
+    $(function () {
+            let swiper = new Swiper('.swiper-container', {
+                spaceBetween: 30,
+                loop: true,
+                centeredSlides: true,
+                autoplay: {
+                    delay: 1000,
+                    disableOnInteraction: false,
+                },
+                pagination: {
+                    el: '.swiper-pagination',
+                    clickable: true,
+                },
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                },
+            });
+        })
+    </script>
+{% endblock %}
+{% block page_head %}
+    <div>
+        {% include 'include/common/top.html' %}
+        {% include 'include/navgation.html' %}
+        {% include 'include/cate.html' %}
+        {% include 'include/banner.html' %}
+    </div>
+{% endblock %}
+{% block page_main %}
+
+{% endblock %}
+{% block page_footer %}
+
+{% endblock %}
