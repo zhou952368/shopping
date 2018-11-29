@@ -1,6 +1,7 @@
-<div class="top">
-    <a href="/">
-        <span><span class="glyphicon glyphicon-home"></span>商城首页</span>
+<div class="top clear">
+    <div class="top_left">
+        <a href="/">
+        <span><span class="glyphicon glyphicon-home" style="color: red"></span>商城首页</span>
     </a>
     <span>欢迎来到368商城</span>
     {% if user.is_authenticated %}
@@ -10,6 +11,9 @@
         <a href="#">登录</a>
         <a href="#">注册</a>
     {% endif %}
-    <a href="#">我的订单</a>
-    <a href="#"><span class="glyphicon glyphicon-shopping-cart"></span>购物车</a>
+    </div>
+    <div class="top_right">
+        <a href="#">我的订单</a>
+        <a href="#"><span class="glyphicon glyphicon-shopping-cart" style="color: red"></span>购物车</a>
+    </div>
 </div>

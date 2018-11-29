@@ -1,0 +1,29 @@
+{% extends 'base/base.html' %}
+{% load staticfiles %}
+{% block page_css %}
+    {% static 'css/index.css' %}
+{% endblock %}
+{% block page_head %}
+    {% include 'include/common/top.html' %}
+    {% include 'include/common/search.html' %}
+{% endblock %}
+{% block page_main %}
+    <div>
+        {% if shops %}
+            <ul>
+                {% for shop in shops %}
+                    <li>
+                        <a href="{% url 'detail' %}?sid={{ shop.shop_id }}">
+                            <img src="/static/img/middle/{{ shop.img.shop_img_id }}.jpg" alt="">
+                            <p>{{ shop.promote_price }}</p>
+                        </a>
+                        <P>{{ shop.name }}</P>
+                        <a href="#">天猫买卖</a>
+                    </li>
+                {% endfor %}
+            </ul>
+            {% else %}
+            <p>没有找到相应的产品</p>
+        {% endif %}
+    </div>
+{% endblock %}

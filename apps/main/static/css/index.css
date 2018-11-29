@@ -1,0 +1,86 @@
+.top {
+    background: #F1F1F1;
+    padding: 7px;
+    font-weight: bold;
+    width: 100%;
+    position: fixed;
+    z-index: 2;
+}
+
+.top_left {
+    float: left;
+    margin-left: 15%;
+}
+
+.top_right {
+    float: right;
+    margin-right: 15%;
+}
+
+.top_left span {
+    margin: 0 10px;
+}
+
+.top_right > a {
+    margin: 0 10px;
+}
+
+/*.search {*/
+    /*height: 200px;*/
+/*}*/
+
+/*.search > img {*/
+    /*width: 290px;*/
+    /*margin: 50px 120px 30px 15%;*/
+/*}*/
+/*.search>input{*/
+    /*width: 450px;*/
+    /*height: 40px;*/
+/*}*/
+/*.search > button {*/
+    /*font-weight: bold;*/
+    /*font-size: 20px;*/
+    /*padding: 5px 15px;*/
+/*}*/
+.nav{
+    background: red;
+    width: 100%;
+}
+.nav li{
+    font-weight: bold;
+    font-size: 20px;
+    padding: 0 30px;
+}
+.shop_type{
+    height: 42px;
+}
+.shop_type>span{
+    padding: 10px 30px 12px;
+    text-align: center;
+}
+.cate{
+    float: left;
+    width: 15%;
+}
+.cate a{
+    font-size: 18px;
+}
+.cate>li{
+    margin: 10px ;
+}
+.swiper-container{
+    float: right;
+    width: 85%;
+}
+.main_div{
+    margin: 20px 10%;
+}
+.shop>li{
+    float: left;
+    width:20%;
+}
+.shop_p{
+    word-wrap:break-word;
+    word-break:break-all;
+    overflow: hidden;
+}

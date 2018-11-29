@@ -23,7 +23,9 @@ SYS_APPS = ['django.contrib.admin',
             ]
 # 第三方的模块注册
 EXT_APPS = [
-    # 'bootstrap3',
+    'xadmin',
+    'crispy_forms',
+    'reversion',
 ]
 
 # 自定义功能模块注册
@@ -34,6 +36,7 @@ CUSTOM_APPS = [
     'apps.main',
     'apps.search',
 ]
+AUTH_USER_MODEL = 'main.User'
 
 INSTALLED_APPS = SYS_APPS + EXT_APPS + CUSTOM_APPS
 # 中间注册
@@ -74,10 +77,10 @@ DATABASES = {
     # 默认数据配置(可以配置多个)
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': '91gou',
+        'NAME': 'shop',
         'USER': 'root',
-        'PASSWORD': 'root',
-        'HOST': '112.74.42.138',
+        'PASSWORD': '952368',
+        'HOST': '47.106.185.147',
         'PORT': '3306',
     }
 }

@@ -1,4 +1,5 @@
 {% extends 'base/base.html' %}
+{% load cache %}
 {% load staticfiles %}
 {% block title %}
     首页
@@ -10,13 +11,13 @@
 {% block page_jq %}
     <script src="{% static 'js/swiper.js' %}"></script>
     <script type="text/javascript">
-    $(function () {
+        $(function () {
             let swiper = new Swiper('.swiper-container', {
                 spaceBetween: 30,
                 loop: true,
                 centeredSlides: true,
                 autoplay: {
-                    delay: 1000,
+                    delay: 2500,
                     disableOnInteraction: false,
                 },
                 pagination: {
@@ -32,16 +33,35 @@
     </script>
 {% endblock %}
 {% block page_head %}
-    <div>
+    <div class="head_div clear">
         {% include 'include/common/top.html' %}
+        {% include 'include/common/search.html' %}
+        {#        {% cache 60 'head' %}#}
         {% include 'include/navgation.html' %}
         {% include 'include/cate.html' %}
         {% include 'include/banner.html' %}
+        {#        {% endcache %}#}
     </div>
-{% endblock %}
-{% block page_main %}
 
 {% endblock %}
+{% block page_main %}
+    <div class="main_div">
+    {% for cate in cate_list %}
+        <p class="main_p">{{ cate.name }}</p>
+        <ul class="shop clear">
+            {% for  shop in cate.shops %}
+                <li>
+                    <a href="{% url 'detail' %}?sid={{ shop.shop_id }}">
+                        <img src="/static/img/middle/{{ shop.img }}.jpg">
+                        <p class="shop_p">{{ shop.name }}</p>
+                    </a>
+                    <p>{{ shop.promote_price }}</p>
+                </li>
+            {% endfor %}
+        </ul>
+    {% endfor %}
+{% endblock %}
+</div>
 {% block page_footer %}
 
 {% endblock %}

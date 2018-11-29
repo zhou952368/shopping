@@ -1,0 +1,13 @@
+{% load staticfiles %}
+<div class="search">
+    <img src="{% static 'img/imgs/logo.gif' %}" alt="">
+    <div>
+        <form action="{% url 'search' %}" method="get">
+            <input type="text" name="keyword" placeholder="请输入关键字">
+            <input type="submit" value="搜索">
+        </form>
+        <ul>
+            <li><a href="#">口红</a></li>
+        </ul>
+    </div>
+</div>

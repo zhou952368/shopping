@@ -1,0 +1,13 @@
+.shop_property{
+    margin: 50px 15% 10px;
+    border: 1px solid black;
+    font-weight: bold;
+}
+.pro_span{
+    width: 30%;
+    display: inline-block;
+    margin-top: 10px;
+    margin-left: 10px;
+    float: left;
+    font-weight: bold;
+}

@@ -1,0 +1,59 @@
+{% extends 'base/base.html' %}
+{% load static %}
+{% block page_css %}
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
+    <link rel="stylesheet" href="{% static 'css/detail.css' %}">
+{% endblock %}
+{% block page_head %}
+    {% include 'include/common/top.html' %}
+{% endblock %}
+{% block page_main %}
+    <div>
+        <div>
+            <ul>
+                {% for img in shop.imgs %}
+                    {% if img.type == 'type_single' %}
+                        <li><img src="/static/img/middle/{{ img.shop_img_id }}.jpg"></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+            <ul>
+                {% for img in shop.imgs %}
+                    {% if img.type == 'type_single' %}
+                        <li><img src="/static/img/small/{{ img.shop_img_id }}.jpg"></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+        </div>
+        <div>
+            <p>{{ shop.name }}</p>
+            <p>{{ shop.sub_title }}</p>
+            <p>{{ shop.original_price }}</p>
+            <p>{{ shop.promote_price }}</p>
+        </div>
+        <input type="number" value="1" min="1" max="{{ shop.stock }}"><span>{{ shop.stock }}</span>
+        <div>
+            <a href="#">立即购买</a>
+            <button type="button">加入购物车</button>
+        </div>
+    </div>
+    <div class="shop_property">
+        <span>商品详情</span>
+        <span>评价{{ review|length }}</span>
+        <div class="pro_div clear">
+            {% for pro in property %}
+                <div class="pro_span">
+                    <span>{{ pro.property.name }}</span>
+                    <span>{{ pro.value }}</span>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+    <div id="shop_detail_img">
+        {% for img in shop.imgs %}
+            {% if img.type == 'type_detail' %}
+                <img src="/static/img/detail/{{ img.shop_img_id }}.jpg">
+            {% endif %}
+        {% endfor %}
+    </div>
+{% endblock %}
